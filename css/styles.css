@@ -1,0 +1,227 @@
+:root {
+    --primary:#9c27b0;
+    --primaryDarken:#89119d;
+    --secondary:#FFCE00;
+    --secondaryDarken:#d6ad06fb;
+    --white:rgb(230, 223, 223);
+    --black:#000;
+
+    --font-fam: 'Staatliches', cursive;
+}
+
+*,*:before,*:after{ box-sizing: inherit; }
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;/*DE NUEVO HACK PARA -----> 1rem = 10px*/
+}
+
+/*GLOBALES*/
+body{
+    background-color:var(--primary);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+p{
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--white);
+}
+a{ text-decoration: none; }
+img{ width: 100%; }
+
+.contenedor{
+    max-width: 90rem;
+    margin:0 auto;
+}
+h1,h2,h3{
+    text-align: center;
+    color: var(--secondary);
+    font-family: var(--font-fam);
+}
+h1{ font-size: 4rem; }
+h2{ font-size: 3.2rem; }
+h3{ font-size: 2.4rem; }
+
+/*HEADER*/
+
+.header{
+    display: flex;
+    justify-content: center;
+}
+.header__logo{
+    margin: 3rem 0;
+}
+
+/*FOOTER*/
+.footer{
+    background-color: var(--primaryDarken);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+.footer__txt{
+    font-family: var(--font-fam);
+    font-size: 2.2rem;
+    text-align: center;
+}
+/*NAVEGACIÖN*/
+.nav{
+    background-color: var(--primaryDarken);
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
+}
+.nav__link{
+    color: var(--white);
+    font-family: var(--font-fam);
+    font-size: 3rem;
+}
+.nav__link--active{
+    color: var(--secondary);
+}
+
+/*GRID*/
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+}
+@media (min-width:768px){
+    .grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/*PRODUCTOS*/
+.producto{
+    background-color: var(--primaryDarken);
+    padding: 1rem;
+}
+.producto__img{
+    cursor: pointer;
+}
+/* .producto__info{
+
+} */
+.producto__nombre{
+    font-size: 3.8rem;
+}
+.producto__precio{
+    font-size: 2.8rem;
+    color: var(--secondary);
+}
+.producto__nombre,
+.producto__precio{
+    font-family: var(--font-fam);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 2.5rem;
+    padding-top: 1rem;
+}
+/*GRÁFICOS*/
+.grafico{
+    min-height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column: 1 / 3;
+}
+.grafico--camisas{
+    grid-row: 2 / 3;
+    background-image: url(../img/grafico1.jpg);
+}
+.grafico--node{
+    background-image: url(../img/grafico2.jpg);
+    grid-row: 8 / 9;
+}
+@media (min-width:768px){
+    .grafico--node{
+        background-image: url(../img/grafico2.jpg);
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
+}
+/*NOSOTROS*/
+.nosotros{
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+}
+@media (min-width:768px){
+    .nosotros{      
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+        }
+    
+}
+
+.nosotros__img{
+    grid-row: 1/2;
+}
+@media (min-width:768px){
+    .nosotros__img{
+        grid-column:2 / 3;
+    }
+}
+/*BLOQUES*/
+.bloques{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+@media (min-width:768px){
+    .bloques{
+        grid-template-columns: repeat(4, 1fr );
+    }
+}
+@media (max-width:460px){
+    .bloques{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+.bloque{
+    text-align: center;
+}
+.bloque__titulo{
+margin: 0;
+}
+/*PAGINA DEL PRODUCTO*/
+
+@media (min-width:768PX){
+    .camisa{
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+}
+}
+.formulario{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr );
+    gap: 2rem;
+
+}
+.formulario__campo{
+    border: 1rem solid var(--primaryDarken);
+    background-color: transparent;
+    color: var(--white);
+    font-size: 2rem;
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    appearance: none;
+}
+.formulario__submit{
+    background-color: var(--secondary);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--font-fam);
+    padding: 2rem;
+    border-radius: 1rem;
+    transition: background-color .3s ease;
+    transition: font-size .3s ease;
+    grid-column: 1 / 3;
+}
+.formulario__submit:hover{
+    font-size: 2.4rem;
+    background-color: var(--secondaryDarken);
+    cursor: pointer;
+}
